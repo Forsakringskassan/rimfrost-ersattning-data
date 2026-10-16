@@ -1,5 +1,7 @@
 package se.fk.rimfrost.ersattningdata;
 
+import java.time.LocalDate;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -10,19 +12,23 @@ public class ErsattningData
    private int belopp;
    private int berakningsgrund;
    private Beslutsutfall beslutsutfall;
+   private LocalDate from;
+   private LocalDate tom;
 
    public ErsattningData()
    {
    }
 
    public ErsattningData(ErsattningsTyp ersattningstyp, int omfattningProcent, int belopp,
-         int berakningsgrund, Beslutsutfall beslutsutfall)
+         int berakningsgrund, Beslutsutfall beslutsutfall, LocalDate from, LocalDate tom)
    {
       this.ersattningstyp = ersattningstyp;
       this.omfattningProcent = omfattningProcent;
       this.belopp = belopp;
       this.berakningsgrund = berakningsgrund;
       this.beslutsutfall = beslutsutfall;
+      this.from = from;
+      this.tom = tom;
    }
 
    // Getters and setters
@@ -76,6 +82,26 @@ public class ErsattningData
       this.beslutsutfall = beslutsutfall;
    }
 
+   public LocalDate getFrom()
+   {
+      return from;
+   }
+
+   public void setFrom(LocalDate from)
+   {
+      this.from = from;
+   }
+
+   public LocalDate getTom()
+   {
+      return tom;
+   }
+
+   public void setTom(LocalDate tom)
+   {
+      this.tom = tom;
+   }
+
    @Override
    public String toString()
    {
@@ -85,6 +111,8 @@ public class ErsattningData
             ", belopp=" + belopp +
             ", berakningsgrund=" + berakningsgrund +
             ", beslutsutfall=" + beslutsutfall +
+            ", from=" + from +
+            ", tom=" + tom +
             '}';
    }
 
