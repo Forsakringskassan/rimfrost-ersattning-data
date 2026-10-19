@@ -14,13 +14,15 @@ public class ErsattningData
    private Beslutsutfall beslutsutfall;
    private LocalDate from;
    private LocalDate tom;
+   private String avslagsanledning;
 
    public ErsattningData()
    {
    }
 
    public ErsattningData(ErsattningsTyp ersattningstyp, int omfattningProcent, int belopp,
-         int berakningsgrund, Beslutsutfall beslutsutfall, LocalDate from, LocalDate tom)
+         int berakningsgrund, Beslutsutfall beslutsutfall, LocalDate from, LocalDate tom,
+         String avslagsanledning)
    {
       this.ersattningstyp = ersattningstyp;
       this.omfattningProcent = omfattningProcent;
@@ -29,6 +31,7 @@ public class ErsattningData
       this.beslutsutfall = beslutsutfall;
       this.from = from;
       this.tom = tom;
+      this.avslagsanledning = avslagsanledning;
    }
 
    // Getters and setters
@@ -102,6 +105,16 @@ public class ErsattningData
       this.tom = tom;
    }
 
+   public String getAvslagsanledning()
+   {
+      return avslagsanledning;
+   }
+
+   public void setAvslagsanledning(String avslagsanledning)
+   {
+      this.avslagsanledning = avslagsanledning;
+   }
+
    @Override
    public String toString()
    {
@@ -113,6 +126,7 @@ public class ErsattningData
             ", beslutsutfall=" + beslutsutfall +
             ", from=" + from +
             ", tom=" + tom +
+            ", avslagsanledning='" + avslagsanledning + '\'' +
             '}';
    }
 
