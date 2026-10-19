@@ -1,12 +1,15 @@
 package se.fk.rimfrost.ersattningdata;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ErsattningData
 {
+   private UUID id;
+   private int version;
    private ErsattningsTyp ersattningstyp;
    private int omfattningProcent;
    private int belopp;
@@ -20,10 +23,12 @@ public class ErsattningData
    {
    }
 
-   public ErsattningData(ErsattningsTyp ersattningstyp, int omfattningProcent, int belopp,
+   public ErsattningData(UUID id, int version, ErsattningsTyp ersattningstyp, int omfattningProcent, int belopp,
          int berakningsgrund, Beslutsutfall beslutsutfall, LocalDate from, LocalDate tom,
          String avslagsanledning)
    {
+      this.id = id;
+      this.version = version;
       this.ersattningstyp = ersattningstyp;
       this.omfattningProcent = omfattningProcent;
       this.belopp = belopp;
@@ -35,6 +40,26 @@ public class ErsattningData
    }
 
    // Getters and setters
+   public UUID getId()
+   {
+      return id;
+   }
+
+   public void setId(UUID id)
+   {
+      this.id = id;
+   }
+
+   public int getVersion()
+   {
+      return version;
+   }
+
+   public void setVersion(int version)
+   {
+      this.version = version;
+   }
+
    public ErsattningsTyp getErsattningstyp()
    {
       return ersattningstyp;
@@ -119,7 +144,9 @@ public class ErsattningData
    public String toString()
    {
       return "ErsattningData{" +
-            "ersattningstyp='" + ersattningstyp + '\'' +
+            "id=" + id +
+            ", version=" + version +
+            ", ersattningstyp='" + ersattningstyp + '\'' +
             ", omfattningProcent=" + omfattningProcent +
             ", belopp=" + belopp +
             ", berakningsgrund=" + berakningsgrund +
