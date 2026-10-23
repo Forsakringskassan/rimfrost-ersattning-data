@@ -18,6 +18,7 @@ public class ErsattningData
    private LocalDate from;
    private LocalDate tom;
    private String avslagsanledning;
+   private String yrkandeStatus;
 
    public ErsattningData()
    {
@@ -25,7 +26,7 @@ public class ErsattningData
 
    public ErsattningData(UUID id, int version, ErsattningsTyp ersattningstyp, int omfattningProcent, int belopp,
          int berakningsgrund, Beslutsutfall beslutsutfall, LocalDate from, LocalDate tom,
-         String avslagsanledning)
+         String avslagsanledning, String yrkandeStatus)
    {
       this.id = id;
       this.version = version;
@@ -37,6 +38,7 @@ public class ErsattningData
       this.from = from;
       this.tom = tom;
       this.avslagsanledning = avslagsanledning;
+      this.yrkandeStatus = yrkandeStatus;
    }
 
    // Getters and setters
@@ -140,6 +142,16 @@ public class ErsattningData
       this.avslagsanledning = avslagsanledning;
    }
 
+   public String getYrkandeStatus()
+   {
+      return yrkandeStatus;
+   }
+
+   public void setYrkandeStatus(String yrkandeStatus)
+   {
+      this.yrkandeStatus = yrkandeStatus;
+   }
+
    @Override
    public String toString()
    {
@@ -154,6 +166,7 @@ public class ErsattningData
             ", from=" + from +
             ", tom=" + tom +
             ", avslagsanledning='" + avslagsanledning + '\'' +
+            ", yrkandeStatus='" + yrkandeStatus + '\'' +
             '}';
    }
 
