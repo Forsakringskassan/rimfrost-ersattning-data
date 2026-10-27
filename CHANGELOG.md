@@ -2,7 +2,15 @@
 
 Changelog of rimfrost-ersattning-data.
 
-## 1.0.0 (2026-04-29)
+## 1.1.1 (2026-10-27)
+
+### Bug Fixes
+
+-  Replace github workflows ([16387](https://github.com/Forsakringskassan/rimfrost-ersattning-data/commit/163873cf53cfa96) Lars Persson)  
+
+## rimfrost-1_2 (2026-04-29)
+
+## rimfrost-1.1 (2026-04-29)
 
 ### Breaking changes
 
