@@ -1,31 +1,67 @@
 package se.fk.rimfrost.ersattningdata;
 
+import java.time.LocalDate;
+import java.util.UUID;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ErsattningData
 {
+   private UUID id;
+   private int version;
    private ErsattningsTyp ersattningstyp;
    private int omfattningProcent;
    private int belopp;
    private int berakningsgrund;
    private Beslutsutfall beslutsutfall;
+   private LocalDate from;
+   private LocalDate tom;
+   private String avslagsanledning;
+   private String yrkandeStatus;
 
    public ErsattningData()
    {
    }
 
-   public ErsattningData(ErsattningsTyp ersattningstyp, int omfattningProcent, int belopp,
-         int berakningsgrund, Beslutsutfall beslutsutfall)
+   public ErsattningData(UUID id, int version, ErsattningsTyp ersattningstyp, int omfattningProcent, int belopp,
+         int berakningsgrund, Beslutsutfall beslutsutfall, LocalDate from, LocalDate tom,
+         String avslagsanledning, String yrkandeStatus)
    {
+      this.id = id;
+      this.version = version;
       this.ersattningstyp = ersattningstyp;
       this.omfattningProcent = omfattningProcent;
       this.belopp = belopp;
       this.berakningsgrund = berakningsgrund;
       this.beslutsutfall = beslutsutfall;
+      this.from = from;
+      this.tom = tom;
+      this.avslagsanledning = avslagsanledning;
+      this.yrkandeStatus = yrkandeStatus;
    }
 
    // Getters and setters
+   public UUID getId()
+   {
+      return id;
+   }
+
+   public void setId(UUID id)
+   {
+      this.id = id;
+   }
+
+   public int getVersion()
+   {
+      return version;
+   }
+
+   public void setVersion(int version)
+   {
+      this.version = version;
+   }
+
    public ErsattningsTyp getErsattningstyp()
    {
       return ersattningstyp;
@@ -76,15 +112,61 @@ public class ErsattningData
       this.beslutsutfall = beslutsutfall;
    }
 
+   public LocalDate getFrom()
+   {
+      return from;
+   }
+
+   public void setFrom(LocalDate from)
+   {
+      this.from = from;
+   }
+
+   public LocalDate getTom()
+   {
+      return tom;
+   }
+
+   public void setTom(LocalDate tom)
+   {
+      this.tom = tom;
+   }
+
+   public String getAvslagsanledning()
+   {
+      return avslagsanledning;
+   }
+
+   public void setAvslagsanledning(String avslagsanledning)
+   {
+      this.avslagsanledning = avslagsanledning;
+   }
+
+   public String getYrkandeStatus()
+   {
+      return yrkandeStatus;
+   }
+
+   public void setYrkandeStatus(String yrkandeStatus)
+   {
+      this.yrkandeStatus = yrkandeStatus;
+   }
+
    @Override
    public String toString()
    {
       return "ErsattningData{" +
-            "ersattningstyp='" + ersattningstyp + '\'' +
+            "id=" + id +
+            ", version=" + version +
+            ", ersattningstyp='" + ersattningstyp + '\'' +
             ", omfattningProcent=" + omfattningProcent +
             ", belopp=" + belopp +
             ", berakningsgrund=" + berakningsgrund +
             ", beslutsutfall=" + beslutsutfall +
+            ", from=" + from +
+            ", tom=" + tom +
+            ", avslagsanledning='" + avslagsanledning + '\'' +
+            ", yrkandeStatus='" + yrkandeStatus + '\'' +
             '}';
    }
 
