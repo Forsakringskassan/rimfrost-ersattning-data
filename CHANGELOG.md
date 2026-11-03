@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-ersattning-data.
 
+## 1.1.3 (2026-11-03)
+
+### Bug Fixes
+
+-  Bump release version ([01c21](https://github.com/Forsakringskassan/rimfrost-ersattning-data/commit/01c2160fe35cbd5) Lars Persson)  
+
 ## 1.1.2 (2026-11-03)
 
 ### Bug Fixes
