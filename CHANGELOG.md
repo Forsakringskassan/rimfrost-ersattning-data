@@ -2,6 +2,15 @@
 
 Changelog of rimfrost-ersattning-data.
 
+## 1.1.2 (2026-11-03)
+
+### Bug Fixes
+
+-  add yrkandeStatus ([f7f90](https://github.com/Forsakringskassan/rimfrost-ersattning-data/commit/f7f90c534b88c74) Lars Persson)  
+-  add id and version to ersattningData ([40932](https://github.com/Forsakringskassan/rimfrost-ersattning-data/commit/409323d56ef8409) Nils Elveros)  
+-  add avslagsanledning ([f9eb0](https://github.com/Forsakringskassan/rimfrost-ersattning-data/commit/f9eb0d59feac807) Nils Elveros)  
+-  add tom and from to ErsattningData ([903f8](https://github.com/Forsakringskassan/rimfrost-ersattning-data/commit/903f84b6e48d7d3) Nils Elveros)  
+
 ## 1.1.1 (2026-10-27)
 
 ### Bug Fixes
